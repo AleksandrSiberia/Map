@@ -15,7 +15,7 @@ class MapViewCustom: MKMapView {
 
     lazy var regionIrkutsk = MKCoordinateRegion(center: defaultLocation, latitudinalMeters: 500, longitudinalMeters: 500)
 
-
+    
 
     init() {
         super.init(frame: .zero)

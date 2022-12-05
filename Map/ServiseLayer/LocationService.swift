@@ -74,6 +74,8 @@ class LocationService: NSObject, CLLocationManagerDelegate {
 
         manager.requestLocation()
 
+            self.coordinator?.mapViewController?.mapViewCustom.setCenter(self.locationManager.location?.coordinate ?? CLLocationCoordinate2D(), animated: true)
+
 
 
         @unknown default:
@@ -92,7 +94,7 @@ class LocationService: NSObject, CLLocationManagerDelegate {
         if let locations = locations.first?.coordinate  {
 
 
-        self.coordinator?.mapViewController?.mapViewCustom.setCenter(locations, animated: true)
+     //   self.coordinator?.mapViewController?.mapViewCustom.setCenter(locations, animated: true)
 
             let annotation = ModelAnnotation(coordinate: locations, title: "IPhone")
 

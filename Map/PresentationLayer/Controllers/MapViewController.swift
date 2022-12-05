@@ -82,8 +82,6 @@ class MapViewController: UIViewController {
         self.coordinator?.locationService.locationManager.requestAlwaysAuthorization()
 
 
-
-
     }
 
 
@@ -235,7 +233,7 @@ class MapViewController: UIViewController {
                 if let location {
 
                     
-                    let annotation = ModelAnnotation(coordinate: location, title: address)
+                //    let annotation = ModelAnnotation(coordinate: location, title: address)
 
                     self.coordinator?.routeService.setRoute(coordinateStart: self.currentLocation ?? CLLocation().coordinate, coordinateFinish: location, nameFinishLocation: address)
 
