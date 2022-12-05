@@ -9,21 +9,31 @@
 /* Begin PBXBuildFile section */
 		8B1407AD293C692E0085DB43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1407AC293C692E0085DB43 /* AppDelegate.swift */; };
 		8B1407AF293C692E0085DB43 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1407AE293C692E0085DB43 /* SceneDelegate.swift */; };
-		8B1407B1293C692E0085DB43 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1407B0293C692E0085DB43 /* ViewController.swift */; };
-		8B1407B4293C692E0085DB43 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B1407B2293C692E0085DB43 /* Main.storyboard */; };
+		8B1407B1293C692E0085DB43 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1407B0293C692E0085DB43 /* MapViewController.swift */; };
 		8B1407B6293C692F0085DB43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B1407B5293C692F0085DB43 /* Assets.xcassets */; };
 		8B1407B9293C692F0085DB43 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B1407B7293C692F0085DB43 /* LaunchScreen.storyboard */; };
+		8B1407C1293C6E5E0085DB43 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1407C0293C6E5E0085DB43 /* LocationService.swift */; };
+		8B1407C3293C7F7E0085DB43 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1407C2293C7F7E0085DB43 /* Coordinator.swift */; };
+		8BF7CE91293C81C5001FD64C /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF7CE90293C81C5001FD64C /* CoordinatorProtocol.swift */; };
+		8BF7CE93293C84BC001FD64C /* MapViewControllerAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF7CE92293C84BC001FD64C /* MapViewControllerAssembly.swift */; };
+		8BF7CE95293C87E8001FD64C /* MapViewCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF7CE94293C87E8001FD64C /* MapViewCustom.swift */; };
+		8BF7CE9F293CD048001FD64C /* ModelAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF7CE9E293CD048001FD64C /* ModelAnnotation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8B1407A9293C692E0085DB43 /* Map.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Map.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B1407AC293C692E0085DB43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B1407AE293C692E0085DB43 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8B1407B0293C692E0085DB43 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		8B1407B3293C692E0085DB43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8B1407B0293C692E0085DB43 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		8B1407B5293C692F0085DB43 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8B1407B8293C692F0085DB43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8B1407BA293C692F0085DB43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8B1407C0293C6E5E0085DB43 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		8B1407C2293C7F7E0085DB43 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		8BF7CE90293C81C5001FD64C /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
+		8BF7CE92293C84BC001FD64C /* MapViewControllerAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewControllerAssembly.swift; sourceTree = "<group>"; };
+		8BF7CE94293C87E8001FD64C /* MapViewCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewCustom.swift; sourceTree = "<group>"; };
+		8BF7CE9E293CD048001FD64C /* ModelAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelAnnotation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +66,84 @@
 		8B1407AB293C692E0085DB43 /* Map */ = {
 			isa = PBXGroup;
 			children = (
-				8B1407AC293C692E0085DB43 /* AppDelegate.swift */,
-				8B1407AE293C692E0085DB43 /* SceneDelegate.swift */,
-				8B1407B0293C692E0085DB43 /* ViewController.swift */,
-				8B1407B2293C692E0085DB43 /* Main.storyboard */,
+				8BF7CE9D293CD013001FD64C /* Model */,
+				8BF7CE97293C8862001FD64C /* ServiseLayer */,
+				8BF7CE99293C88B2001FD64C /* AppLayer */,
+				8BF7CE9A293C88D7001FD64C /* Coordinator */,
+				8BF7CE9C293C8B05001FD64C /* PresentationLayer */,
 				8B1407B5293C692F0085DB43 /* Assets.xcassets */,
 				8B1407B7293C692F0085DB43 /* LaunchScreen.storyboard */,
 				8B1407BA293C692F0085DB43 /* Info.plist */,
 			);
 			path = Map;
+			sourceTree = "<group>";
+		};
+		8BF7CE96293C882C001FD64C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8B1407B0293C692E0085DB43 /* MapViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		8BF7CE97293C8862001FD64C /* ServiseLayer */ = {
+			isa = PBXGroup;
+			children = (
+				8B1407C0293C6E5E0085DB43 /* LocationService.swift */,
+			);
+			path = ServiseLayer;
+			sourceTree = "<group>";
+		};
+		8BF7CE98293C888E001FD64C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8BF7CE94293C87E8001FD64C /* MapViewCustom.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8BF7CE99293C88B2001FD64C /* AppLayer */ = {
+			isa = PBXGroup;
+			children = (
+				8B1407AC293C692E0085DB43 /* AppDelegate.swift */,
+				8B1407AE293C692E0085DB43 /* SceneDelegate.swift */,
+			);
+			path = AppLayer;
+			sourceTree = "<group>";
+		};
+		8BF7CE9A293C88D7001FD64C /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				8BF7CE90293C81C5001FD64C /* CoordinatorProtocol.swift */,
+				8B1407C2293C7F7E0085DB43 /* Coordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		8BF7CE9B293C88F6001FD64C /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				8BF7CE92293C84BC001FD64C /* MapViewControllerAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		8BF7CE9C293C8B05001FD64C /* PresentationLayer */ = {
+			isa = PBXGroup;
+			children = (
+				8BF7CE96293C882C001FD64C /* Controllers */,
+				8BF7CE98293C888E001FD64C /* Views */,
+				8BF7CE9B293C88F6001FD64C /* Assembly */,
+			);
+			path = PresentationLayer;
+			sourceTree = "<group>";
+		};
+		8BF7CE9D293CD013001FD64C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8BF7CE9E293CD048001FD64C /* ModelAnnotation.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +206,6 @@
 			files = (
 				8B1407B9293C692F0085DB43 /* LaunchScreen.storyboard in Resources */,
 				8B1407B6293C692F0085DB43 /* Assets.xcassets in Resources */,
-				8B1407B4293C692E0085DB43 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,8 +216,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B1407B1293C692E0085DB43 /* ViewController.swift in Sources */,
+				8B1407B1293C692E0085DB43 /* MapViewController.swift in Sources */,
+				8BF7CE93293C84BC001FD64C /* MapViewControllerAssembly.swift in Sources */,
+				8BF7CE95293C87E8001FD64C /* MapViewCustom.swift in Sources */,
+				8BF7CE9F293CD048001FD64C /* ModelAnnotation.swift in Sources */,
 				8B1407AD293C692E0085DB43 /* AppDelegate.swift in Sources */,
+				8B1407C3293C7F7E0085DB43 /* Coordinator.swift in Sources */,
+				8B1407C1293C6E5E0085DB43 /* LocationService.swift in Sources */,
+				8BF7CE91293C81C5001FD64C /* CoordinatorProtocol.swift in Sources */,
 				8B1407AF293C692E0085DB43 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,14 +231,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		8B1407B2293C692E0085DB43 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8B1407B3293C692E0085DB43 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		8B1407B7293C692F0085DB43 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -290,9 +366,10 @@
 				DEVELOPMENT_TEAM = AAF6RWS5XJ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Map/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Предоставьте доступ к геолокации, он необходим для работы приложения ";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Предоставьте доступ к геолокации, он необходим для работы приложения ";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -318,9 +395,10 @@
 				DEVELOPMENT_TEAM = AAF6RWS5XJ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Map/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Предоставьте доступ к геолокации, он необходим для работы приложения ";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Предоставьте доступ к геолокации, он необходим для работы приложения ";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
