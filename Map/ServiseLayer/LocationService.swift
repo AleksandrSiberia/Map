@@ -98,6 +98,8 @@ class LocationService: NSObject, CLLocationManagerDelegate {
 
             self.coordinator?.mapViewController?.mapViewCustom.addAnnotation(annotation)
 
+            self.coordinator?.mapViewController?.currentLocation = locations
+
 
         print("🥨 didUpdateLocations")
 
@@ -112,7 +114,7 @@ class LocationService: NSObject, CLLocationManagerDelegate {
         didFailWithError error: Error
     ) {
         print("‼️", error.localizedDescription)
-        // Handle failure to get a user’s location
+  
     }
 
 

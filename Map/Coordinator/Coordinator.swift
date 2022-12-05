@@ -15,6 +15,10 @@ class Coordinator: CoordinatorProtocol {
 
     var locationService = LocationService()
 
+    var routeService = RouteService()
+
+
+
     weak var mapViewController: MapViewController?
 
 

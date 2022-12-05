@@ -11,8 +11,12 @@ import Foundation
 protocol CoordinatorProtocol {
 
     var mapViewController: MapViewController? { get set }
+
+    var routeService: RouteService { get set }
     
     var locationService: LocationService { get set }
     
     func showMapViewController() -> MapViewController
+
+
 }

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import MapKit
 
 
 
@@ -16,11 +17,12 @@ class MapViewController: UIViewController {
 
     var arrayAnnotation: [ModelAnnotation] = []
 
+    var currentLocation: CLLocationCoordinate2D?
+
 
     private lazy var buttonAddAnnotation: UIBarButtonItem = {
 
         var buttonAddAnnotation = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: #selector(actionButtonAddAnnotation))
-
 
         return buttonAddAnnotation
     }()
@@ -35,6 +37,13 @@ class MapViewController: UIViewController {
         return buttonAddAnnotation
     }()
 
+
+
+    private lazy var buttonSetRoute: UIBarButtonItem = {
+
+        var buttonSetRoute = UIBarButtonItem(image: UIImage(systemName: "car.rear"), style: .plain, target: self, action: #selector( actionButtonSetRoute))
+        return buttonSetRoute
+    }()
 
 
    lazy var mapViewCustom: MapViewCustom = {
@@ -54,6 +63,8 @@ class MapViewController: UIViewController {
             self.view.addSubview($0) }
 
         self.navigationItem.rightBarButtonItems = [self.buttonDeleteAnnotation, self.buttonAddAnnotation ]
+
+        self.navigationItem.leftBarButtonItem = self.buttonSetRoute
 
         setupLayoutConstraints()
 
@@ -91,7 +102,7 @@ class MapViewController: UIViewController {
 
 
     
-    @objc func actionButtonAddAnnotation() {
+    @objc private func actionButtonAddAnnotation() {
 
         let alertWriteAddress = UIAlertController(title: "Добавить метку", message: "напишите адрес", preferredStyle:  .alert)
 
@@ -161,7 +172,8 @@ class MapViewController: UIViewController {
 
 
 
-    @objc func actionButtonDeleteAnnotation() {
+    @objc private func actionButtonDeleteAnnotation() {
+
 
         if self.arrayAnnotation.isEmpty == false {
 
@@ -196,7 +208,79 @@ class MapViewController: UIViewController {
         }
     }
 
+
+
+
+    @objc private func actionButtonSetRoute() {
+
+
+        let alertWriteAddress = UIAlertController(title: "Добавить адрес прибытия", message: "напишите адрес", preferredStyle:  .alert)
+
+        alertWriteAddress.addTextField() { textField in
+
+            textField.keyboardType = .namePhonePad
+        }
+
+
+        let actionWriteAddress = UIAlertAction(title: "Ok", style: .default) {_ in
+
+            let address = alertWriteAddress.textFields?.first?.text ?? ""
+
+
+            self.coordinator?.locationService.getLocationByAddress(address: address) { location in
+
+                if let location {
+
+                    
+                    let annotation = ModelAnnotation(coordinate: location, title: address)
+
+                    self.coordinator?.routeService.setRoute(coordinateStart: self.currentLocation ?? CLLocation().coordinate, coordinateFinish: location, nameFinishLocation: address)
+
+                    let alertSuccessAddAddress = UIAlertController(title: "Адрес добавлен", message: nil, preferredStyle: .actionSheet)
+
+                    let actionSuccessAddAddress = UIAlertAction(title: "Ok", style: .cancel) { _ in
+
+                    }
+
+                    alertSuccessAddAddress.addAction(actionSuccessAddAddress)
+
+                    self.navigationController?.present(alertSuccessAddAddress, animated: true)
+                }
+
+
+                else {
+
+                    let alertError = UIAlertController(title: nil, message: "Адрес не найден, попробуйте еще раз", preferredStyle: .actionSheet)
+                    let actionError = UIAlertAction(title: "Ok", style: .cancel)
+
+                    alertError.addAction(actionError)
+
+                    self.navigationController?.present(alertError, animated: true)
+                }
+
+            }
+
+        }
+
+        let actionCancel = UIAlertAction(title: "Cancel", style: .cancel)
+
+        alertWriteAddress.addAction(actionWriteAddress)
+
+        alertWriteAddress.addAction(actionCancel)
+
+        self.navigationController?.present(alertWriteAddress, animated: true)
+
+
+
+    }
+
+
+
 }
+
+
+
+
 
 
 

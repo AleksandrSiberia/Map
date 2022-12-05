@@ -18,6 +18,7 @@
 		8BF7CE93293C84BC001FD64C /* MapViewControllerAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF7CE92293C84BC001FD64C /* MapViewControllerAssembly.swift */; };
 		8BF7CE95293C87E8001FD64C /* MapViewCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF7CE94293C87E8001FD64C /* MapViewCustom.swift */; };
 		8BF7CE9F293CD048001FD64C /* ModelAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF7CE9E293CD048001FD64C /* ModelAnnotation.swift */; };
+		8BF7CEA1293DF7D0001FD64C /* RouteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF7CEA0293DF7D0001FD64C /* RouteService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		8BF7CE92293C84BC001FD64C /* MapViewControllerAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewControllerAssembly.swift; sourceTree = "<group>"; };
 		8BF7CE94293C87E8001FD64C /* MapViewCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewCustom.swift; sourceTree = "<group>"; };
 		8BF7CE9E293CD048001FD64C /* ModelAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelAnnotation.swift; sourceTree = "<group>"; };
+		8BF7CEA0293DF7D0001FD64C /* RouteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				8B1407C0293C6E5E0085DB43 /* LocationService.swift */,
+				8BF7CEA0293DF7D0001FD64C /* RouteService.swift */,
 			);
 			path = ServiseLayer;
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B1407B1293C692E0085DB43 /* MapViewController.swift in Sources */,
+				8BF7CEA1293DF7D0001FD64C /* RouteService.swift in Sources */,
 				8BF7CE93293C84BC001FD64C /* MapViewControllerAssembly.swift in Sources */,
 				8BF7CE95293C87E8001FD64C /* MapViewCustom.swift in Sources */,
 				8BF7CE9F293CD048001FD64C /* ModelAnnotation.swift in Sources */,
