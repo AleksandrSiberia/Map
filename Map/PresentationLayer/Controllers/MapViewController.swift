@@ -14,6 +14,9 @@ class MapViewController: UIViewController {
 
     var coordinator: CoordinatorProtocol?
 
+    var arrayAnnotation: [ModelAnnotation] = []
+
+
     private lazy var buttonAddAnnotation: UIBarButtonItem = {
 
         var buttonAddAnnotation = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: #selector(actionButtonAddAnnotation))
@@ -90,12 +93,15 @@ class MapViewController: UIViewController {
     
     @objc func actionButtonAddAnnotation() {
 
-        let alertWriteAddress = UIAlertController(title: nil, message: "напишите название города", preferredStyle:  .alert)
+        let alertWriteAddress = UIAlertController(title: "Добавить метку", message: "напишите адрес", preferredStyle:  .alert)
 
-        alertWriteAddress.addTextField()
+        alertWriteAddress.addTextField() { textField in
+
+            textField.keyboardType = .namePhonePad
+        }
 
 
-        let actionWriteAddress = UIAlertAction(title: "Ok", style: .cancel) {_ in
+        let actionWriteAddress = UIAlertAction(title: "Ok", style: .default) {_ in
 
             let address = alertWriteAddress.textFields?.first?.text ?? ""
 
@@ -105,6 +111,8 @@ class MapViewController: UIViewController {
                 if let location {
 
                     let annotation = ModelAnnotation(coordinate: location, title: address)
+
+                    self.arrayAnnotation.append(annotation)
 
                     self.mapViewCustom.addAnnotation(annotation)
 
@@ -139,7 +147,11 @@ class MapViewController: UIViewController {
 
         }
 
+        let actionCancel = UIAlertAction(title: "Cancel", style: .cancel)
+
         alertWriteAddress.addAction(actionWriteAddress)
+
+        alertWriteAddress.addAction(actionCancel)
 
         self.navigationController?.present(alertWriteAddress, animated: true)
 
@@ -151,6 +163,37 @@ class MapViewController: UIViewController {
 
     @objc func actionButtonDeleteAnnotation() {
 
+        if self.arrayAnnotation.isEmpty == false {
+
+            let alert = UIAlertController(title: nil, message: "удалить метки?", preferredStyle: .alert)
+
+            let actionDelete = UIAlertAction(title: "Delete", style: .destructive) {_ in
+
+                self.mapViewCustom.removeAnnotations(self.arrayAnnotation)
+            }
+
+            alert.addAction(actionDelete)
+
+            let actionNo = UIAlertAction(title: "No", style: .cancel)
+
+            alert.addAction(actionNo)
+
+            self.navigationController?.present(alert, animated: true)
+
+        }
+
+
+        
+        else {
+
+            let alert = UIAlertController(title: nil, message: "у вас нет меток для удаления", preferredStyle: .actionSheet)
+
+            let action = UIAlertAction(title: "Ok", style: .cancel)
+
+            alert.addAction(action)
+
+            self.navigationController?.present(alert, animated: true)
+        }
     }
 
 }

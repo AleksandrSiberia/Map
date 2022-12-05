@@ -13,7 +13,7 @@ class MapViewCustom: MKMapView {
     lazy var defaultLocation = CLLocation(latitude: 52.2978, longitude: 104.296).coordinate
 
 
-    lazy var regionIrkutsk = MKCoordinateRegion(center: defaultLocation, latitudinalMeters: 10_000, longitudinalMeters: 10_000)
+    lazy var regionIrkutsk = MKCoordinateRegion(center: defaultLocation, latitudinalMeters: 500, longitudinalMeters: 500)
 
 
 
