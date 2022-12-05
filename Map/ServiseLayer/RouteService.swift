@@ -44,7 +44,7 @@ class RouteService: NSObject, MKMapViewDelegate {
         directions.calculate { response, error in
 
             if let error {
-                print("‼️", error.localizedDescription)
+                print("‼️ MKDirections(request: request)", error.localizedDescription)
                 return
             }
 

@@ -370,6 +370,7 @@
 				DEVELOPMENT_TEAM = AAF6RWS5XJ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Map/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Предоставьте доступ к геолокации, он необходим для работы приложения ";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Предоставьте доступ к геолокации, он необходим для работы приложения ";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Предоставьте доступ к геолокации, он необходим для работы приложения ";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -399,6 +400,7 @@
 				DEVELOPMENT_TEAM = AAF6RWS5XJ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Map/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Предоставьте доступ к геолокации, он необходим для работы приложения ";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Предоставьте доступ к геолокации, он необходим для работы приложения ";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Предоставьте доступ к геолокации, он необходим для работы приложения ";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

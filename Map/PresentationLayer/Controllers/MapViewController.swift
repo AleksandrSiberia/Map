@@ -17,7 +17,10 @@ class MapViewController: UIViewController {
 
     var arrayAnnotation: [ModelAnnotation] = []
 
+    var currentAnnotation: ModelAnnotation?
+
     var currentLocation: CLLocationCoordinate2D?
+
 
 
     private lazy var buttonAddAnnotation: UIBarButtonItem = {
@@ -76,7 +79,7 @@ class MapViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        self.coordinator?.locationService.locationManager.requestWhenInUseAuthorization()
+        self.coordinator?.locationService.locationManager.requestAlwaysAuthorization()
 
 
 

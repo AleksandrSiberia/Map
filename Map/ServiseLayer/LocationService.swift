@@ -96,8 +96,16 @@ class LocationService: NSObject, CLLocationManagerDelegate {
 
             let annotation = ModelAnnotation(coordinate: locations, title: "IPhone")
 
+
+            if let annotation = self.coordinator?.mapViewController?.currentAnnotation {
+                self.coordinator?.mapViewController?.mapViewCustom.removeAnnotation(annotation)
+            }
+
             self.coordinator?.mapViewController?.mapViewCustom.addAnnotation(annotation)
 
+            self.coordinator?.mapViewController?.currentAnnotation = annotation
+
+            
             self.coordinator?.mapViewController?.currentLocation = locations
 
 
